@@ -45,11 +45,12 @@ async function start() {
             },
             {
                 method: 'GET',
-                path: '/dist/{param*}',
+                path: '/{param*}',
                 handler: {
                     directory: {
                         path: 'public',
                         listing: true,
+                        index: true;
                     },
                 },
             },
