@@ -1,0 +1,9 @@
+{
+    "plugins": ["eslint-plugin-node"],
+    "extends": ["hapi"],
+    "rules": {
+        "indent": ["error", 4, { "MemberExpression": "off" }],
+        "no-shadow": ["error", { "allow": ["server", "next", "err"] }],
+        "strict": ["error", "never"]
+    }
+}
