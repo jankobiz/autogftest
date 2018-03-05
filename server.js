@@ -45,12 +45,12 @@ async function start() {
             },
             {
                 method: 'GET',
-                path: '/{param*}',
+                path: '/dist/{param*}',
                 handler: {
                     directory: {
-                        path: 'public',
+                        path: './dist',
                         listing: true,
-                        index: true;
+                        index: false,
                     },
                 },
             },
@@ -61,7 +61,15 @@ async function start() {
                     const resp = await reply.redirect('/hello');
                     return resp;
                 },
-            }
+            },
+            {
+                method: 'GET',
+                path: '/prod',
+                handler: {
+                    file: 'dist/index.html',
+                },
+
+            },
         ]);
         await server.start();
     }
